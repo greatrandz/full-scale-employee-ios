@@ -12,10 +12,48 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var coordinator: AppCoodinator?
 
+    var configuredNavigationController: UINavigationController {
+        let navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = false
+        navigationController.navigationBar.barTintColor = UIColor(hex: "#028740")
+        navigationController.navigationBar.tintColor = .white
+        navigationController.navigationBar.titleTextAttributes = [ .foregroundColor: UIColor.white]
+        navigationController.navigationBar.isTranslucent = false
+        
+        return navigationController
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let rootNavigationController = configuredNavigationController
+        
+        /*
+        let coordinator = DashboardCoordinator(navigationController: rootNavigationController)
+        let viewModel = DashboardViewModel(coordinator: coordinator)
+        let viewController = DashboardViewController(viewModel: viewModel)
+        rootNavigationController.setViewControllers([viewController], animated: false)
+        */
+        /*
+        let network = LoginNetworkService()
+        let coordinator = LoginCoordinator(navigationController: rootNavigationController)
+        let viewModel = LoginViewModel(coordinator: coordinator, network: network)
+        let viewController = LoginViewController(viewModel: viewModel)
+        rootNavigationController.navigationBar.isHidden = true
+        rootNavigationController.setViewControllers([viewController], animated: false)
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        window.makeKeyAndVisible()
+        window.rootViewController = rootNavigationController
+        self.window = window
+        */
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        let coordinator = AppCoodinator(window: window)
+        coordinator.start()
+        self.coordinator = coordinator
+        self.window = window
         return true
     }
 
