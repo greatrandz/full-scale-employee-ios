@@ -33,6 +33,8 @@ final class TableViewManager: NSObject {
     func insertItems(items: [TableViewItem], at indexPath: IndexPath, completion: TableViewItemCompletion?) {
         
         UIView.setAnimationsEnabled(true)
+        
+        let start = NSDate()
         let indexPaths = items.enumerated().map { (index, item) -> IndexPath in
             
             let indexRow = indexPath.row + (index + 1)
@@ -41,13 +43,21 @@ final class TableViewManager: NSObject {
         }
         
         self.tableView?.insertRows(at: indexPaths, with: .bottom)
-        completion?()
+        
+        let timeSinceNow = start.timeIntervalSinceNow
+        let animatedTime = (Double("\(0 - timeSinceNow)")!  + 0.3)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + animatedTime) {
+            completion?()
+        }
         
     }
     
     func removeItems(items: [TableViewItem], animated: Bool, completion: TableViewItemCompletion?) {
         
         UIView.setAnimationsEnabled(animated)
+        
+        let start = NSDate()
         let indexPaths = items.map { self.getIndexPath(id: $0.id) }
         
         if !indexPaths.isEmpty {
@@ -56,7 +66,13 @@ final class TableViewManager: NSObject {
             self.tableView?.deleteRows(at: indexPaths, with: .top)
         }
         
-        completion?()
+        let timeSinceNow = start.timeIntervalSinceNow
+        let animatedTime = (Double("\(0 - timeSinceNow)")!  + 0.3)
+        let deadline = animated ? animatedTime : 0
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {
+            completion?()
+        }
             
     }
     
