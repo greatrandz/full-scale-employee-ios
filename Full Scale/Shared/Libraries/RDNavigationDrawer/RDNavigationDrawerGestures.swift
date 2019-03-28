@@ -373,24 +373,24 @@ extension RDNavigationDrawer: RDNavigation {
         
         if let target = target as? UIViewController {
             targetController = target
+            parentController = target.parent ?? target
             
-            if isTopMost {
-                parentController = target.parent
+            if navigationDrawer != nil {
+                closingPanGesture = nil
+                openingPanGesture = nil
+                sideBarDimBackground.removeFromSuperview()
+                navigationDrawer.removeFromSuperview()
             }
-            else { parentController = target }
             
-            if navigationDrawer == nil {
-                direction = "right";
-                enabled = true
-                
-                initialize(view: view)
-                target.view.addSubview(sideBarDimBackground);
-                
-                originalPercentage = percentage
-                self.percentage(originalPercentage, sideToggle: false)
-                target.view.addSubview(navigationDrawer)
-                
-            }
+            direction = "right";
+            enabled = true
+            
+            initialize(view: view)
+            target.view.addSubview(sideBarDimBackground);
+            
+            originalPercentage = percentage
+            self.percentage(originalPercentage, sideToggle: false)
+            target.view.addSubview(navigationDrawer)
             
             if isTopMost {
                 topMost()
@@ -405,24 +405,24 @@ extension RDNavigationDrawer: RDNavigation {
         
         if let target = target as? UIViewController {
             targetController = target
-            
-            if let parentViewController = target.parent {
-                parentController = parentViewController
+            parentController = target.parent ?? target
+
+            if navigationDrawer != nil {
+                closingPanGesture = nil
+                openingPanGesture = nil
+                sideBarDimBackground.removeFromSuperview()
+                navigationDrawer.removeFromSuperview()
             }
-            else { parentController = target }
             
-            if navigationDrawer == nil {
-                direction = "left";
-                enabled = true
-                
-                initialize(view: view)
-                target.view.addSubview(sideBarDimBackground);
-                
-                originalPercentage = percentage
-                self.percentage(originalPercentage, sideToggle: false)
-                target.view.addSubview(navigationDrawer)
-                
-            }
+            direction = "left";
+            enabled = true
+            
+            initialize(view: view)
+            target.view.addSubview(sideBarDimBackground);
+            
+            originalPercentage = percentage
+            self.percentage(originalPercentage, sideToggle: false)
+            target.view.addSubview(navigationDrawer)
             
             if isTopMost {
                 topMost()

@@ -59,6 +59,14 @@ final class RealmManager {
         execute { $0.add(objects, update: true) }
     }
     
+    func remove(object: Object) {
+        execute { $0.delete(object) }
+    }
+    
+    func removeAll() {
+        execute { $0.deleteAll() }
+    }
+    
     func fetch<T: Object>(_ type: T.Type) -> Results<T> {
         return realm.objects(type)
     }

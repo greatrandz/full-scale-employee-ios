@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 
 final class LoginNetworkService: NetworkApiService {
-    typealias T = Session
+    typealias T = String
     typealias P = [String: Any]?
     
     private let realm = RealmManager()
@@ -19,8 +19,8 @@ final class LoginNetworkService: NetworkApiService {
         return "api/auth/token"
     }
     
-    func load(parameters: [String : Any]?) -> Observable<Session> {
-        let observer = Observable<Session>.create { (observer) -> Disposable in
+    func load(parameters: [String : Any]?) -> Observable<String> {
+        let observer = Observable<String>.create { (observer) -> Disposable in
             
             self.requestLogin(parameters: parameters, observer: observer)
             return Disposables.create()
@@ -28,13 +28,17 @@ final class LoginNetworkService: NetworkApiService {
         return observer
     }
     
-    func data(result: Data?, observer: AnyObserver<Session>) throws {
+    func result(data: Data?, observer: AnyObserver<String>) throws {
         
-        guard let session: Session = result?.decode() else {
+        guard let session: Session = data?.decode() else {
+            if let error: APIError = data?.decode() {
+                observer.onError(error)
+                return
+            }
             fatalError("Unable to decode session")
         }
         realm.update(object: session)
-        observer.onNext(session)
+        observer.onNext("Successfully Logged In")
         observer.onCompleted()
     }
     
@@ -42,7 +46,7 @@ final class LoginNetworkService: NetworkApiService {
         return URL(string: FSConstants.fsAPIURL + path)!
     }
     
-    private func requestLogin(parameters: [String : Any]?, observer: AnyObserver<Session>) {
+    private func requestLogin(parameters: [String : Any]?, observer: AnyObserver<String>) {
         do {
             let url = try self.url()
             var withParams = [String: Any]()

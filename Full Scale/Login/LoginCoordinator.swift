@@ -17,12 +17,28 @@ struct LoginCoordinator: Coordinator {
     }
     
     func start() {
+        guard let navigationController = self.navigationController else {
+            return
+        }
+        
         let network = LoginNetworkService()
         let viewModel = LoginViewModel(coordinator: self, network: network)
         let viewController = LoginViewController(viewModel: viewModel)
-        navigationController?.navigationBar.isHidden = true
+
         DispatchQueue.main.async {
-            self.navigationController?.setViewControllers([viewController], animated: false)
+            
+            UIView.transition(with: navigationController.view,
+                              duration: 0.5,
+                              options: UIView.AnimationOptions.transitionCrossDissolve,
+                              animations: {
+                                navigationController.navigationBar.alpha = 0
+                                navigationController.setViewControllers([viewController], animated: false)
+                                
+            }, completion: { (finished) in
+                navigationController.navigationBar.alpha = 1
+                navigationController.navigationBar.isHidden = true
+            })
+            
         }
     }
     

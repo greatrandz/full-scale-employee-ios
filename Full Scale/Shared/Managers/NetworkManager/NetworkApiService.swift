@@ -23,7 +23,7 @@ protocol NetworkApiService: LoadService {
     
     func url() throws -> URL
     
-    func data(result: Data?, observer: AnyObserver<T>) throws
+    func result(data: Data?, observer: AnyObserver<T>) throws
 }
 
 extension NetworkApiService {
@@ -86,7 +86,7 @@ extension NetworkApiService {
         
         do {
             if responseResult.isSuccess {
-                try self.data(result: response.data, observer: observer)
+                try self.result(data: response.data, observer: observer)
             }
             else if let error = responseResult.error as NSError? {
                 observer.onError(error)

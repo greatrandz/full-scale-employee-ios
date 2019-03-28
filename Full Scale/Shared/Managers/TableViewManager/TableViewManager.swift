@@ -42,7 +42,8 @@ final class TableViewManager: NSObject {
             return IndexPath(row: indexRow, section: indexPath.section)
         }
         
-        self.tableView?.insertRows(at: indexPaths, with: .bottom)
+        let rowAnimation:UITableView.RowAnimation = (items.count==1) ? .top : .bottom
+        self.tableView?.insertRows(at: indexPaths, with: rowAnimation)
         
         let timeSinceNow = start.timeIntervalSinceNow
         let animatedTime = (Double("\(0 - timeSinceNow)")!  + 0.3)

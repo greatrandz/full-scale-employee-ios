@@ -11,20 +11,21 @@ import UIKit
 final class SideMenuViewModel: TableViewSection, SideMenuItemDelegate {
     private let coordinator: SideMenuCoordinator
     private let tableViewManager = TableViewManager()
-    var items = [TableViewItem]()
+    private let logoutService = LogoutService()
     
     private var selectedIndexPath: IndexPath?
     private var mockItems: [[String: Any]] = [
-        ["title": "Dashboard", "isDropdown": false],
-        ["title": "Employees", "isDropdown": true],
-        ["title": "Resources Allocation", "isDropdown": true],
-        ["title": "Client Management", "isDropdown": true],
+        ["sideMenu": SideMenu.dashboard, "isDropdown": false],
+        ["sideMenu": SideMenu.employees, "isDropdown": true],
+        ["sideMenu": SideMenu.resourcesAllocation, "isDropdown": true],
+        /*["title": "Client Management", "isDropdown": true],
         ["title": "Applicants", "isDropdown": true],
         ["title": "Reporting", "isDropdown": true],
-        ["title": "Settings", "isDropdown": true],
-        ["title": "Logout", "isDropdown": false]
+        ["title": "Settings", "isDropdown": true],*/
+        ["sideMenu": SideMenu.logout, "isDropdown": false]
     ]
     
+    var items = [TableViewItem]()
     var sections: [TableViewSection] {
         return [self]
     }
@@ -35,10 +36,10 @@ final class SideMenuViewModel: TableViewSection, SideMenuItemDelegate {
     }
     
     func configureItems() {
-        for (id, menu) in mockItems.enumerated() {
-            let title = menu["title"] as! String
-            let isDropdown = menu["isDropdown"] as! Bool
-            let applications = SideMenuItem(id: id, title: title, isDropdown: isDropdown, hasSubitem: false, isSelected: false)
+        for (id, item) in mockItems.enumerated() {
+            let sideMenu = item["sideMenu"] as! SideMenu
+            let isDropdown = item["isDropdown"] as! Bool
+            let applications = SideMenuItem(id: id, sideMenu: sideMenu, isDropdown: isDropdown, hasSubitem: false, isSelected: false)
             applications.delegate = self
             items.append(applications)
         }
@@ -51,10 +52,12 @@ final class SideMenuViewModel: TableViewSection, SideMenuItemDelegate {
     }
     
     func reload() {
-        selectedIndexPath = nil
-        items.removeAll()
-        configureItems()
-        tableViewManager.reloadData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.selectedIndexPath = nil
+            self.items.removeAll()
+            self.configureItems()
+            self.tableViewManager.reloadData()
+        }
     }
     
     func registerCells(for tableView: UITableView) {
@@ -80,32 +83,57 @@ final class SideMenuViewModel: TableViewSection, SideMenuItemDelegate {
                 self.selectedIndexPath = nil
                 
                 if isShowing {
-                    self.showDropdown(title: item.title, at: indexPath)
+                    self.showDropdown(sideMenu: item.sideMenu, at: indexPath)
                 }
                 completion?(isShowing)
             }
             
         }
         else {
-            coordinator.testPushViewController()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.reload()
+            switch item.sideMenu {
+                
+            case .dashboard:
+                coordinator.sideToggle()
+                
+            case .employeeList:
+                coordinator.testPushViewController()
+                reload()
+                
+            case .manageResources:
+                coordinator.sideToggle()
+                
+            case .logout:
+                logoutService.logout()
+                coordinator.presentLogin()
+                
+            default:
+                break
             }
+            
         }
         
     }
     
-    private func showDropdown(title: String, at indexPath: IndexPath) {
+    private func showDropdown(sideMenu: SideMenu, at indexPath: IndexPath) {
+        var sideMenuItems = [SideMenuItem]()
+        switch sideMenu {
+            case .employees:
+                let employeeList = SideMenuItem(id: 100, sideMenu: .employeeList,
+                                              isDropdown: false, hasSubitem: true, isSelected: true)
+                employeeList.delegate = self
+                sideMenuItems.append(employeeList)
+            
+            case .resourcesAllocation:
+                let manageResources = SideMenuItem(id: 100, sideMenu: .manageResources,
+                                            isDropdown: false, hasSubitem: true, isSelected: true)
+                manageResources.delegate = self
+                sideMenuItems.append(manageResources)
+            
+            default:
+                break
+        }
         
-        let titleItem = title.contains("ees") ? "Employee List" : title
-        let applicants = SideMenuItem(id: 100, title: titleItem,
-                                      isDropdown: false, hasSubitem: true, isSelected: true)
-        applicants.delegate = self
-        let publicApplicant = SideMenuItem(id: 101, title: "Public Applicant Form",
-                                           isDropdown: false, hasSubitem: true, isSelected: true)
-        publicApplicant.delegate = self
-        
-        self.tableViewManager.insertItems(items: [applicants, publicApplicant], at: indexPath) {
+        self.tableViewManager.insertItems(items: sideMenuItems, at: indexPath) {
             self.selectedIndexPath = indexPath
         }
     }
@@ -119,4 +147,30 @@ final class SideMenuViewModel: TableViewSection, SideMenuItemDelegate {
     }
     
     
+}
+
+enum SideMenu: String {
+    case dashboard
+    case employees
+    case employeeList
+    case resourcesAllocation
+    case manageResources
+    
+    case logout
+    
+    var title: String {
+        switch self {
+        case .dashboard:
+            return "Dashboard"
+            
+        case .employees: return "Employees"
+        case .employeeList:  return "Employee List"
+            
+        case .resourcesAllocation: return "Resources Allocation"
+        case .manageResources: return "Manage Resources"
+            
+        case .logout:
+            return "Logout"
+        }
+    }
 }

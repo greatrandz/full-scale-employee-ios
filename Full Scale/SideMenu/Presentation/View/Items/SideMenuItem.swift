@@ -15,7 +15,7 @@ protocol SideMenuItemDelegate {
 final class SideMenuItem: TableViewItem, SideMenuTableViewCellDelegate {
 
     let id: Int
-    let title: String
+    let sideMenu: SideMenu
     let isDropdown: Bool
     let hasSubitem: Bool
     var isSelected: Bool
@@ -25,9 +25,9 @@ final class SideMenuItem: TableViewItem, SideMenuTableViewCellDelegate {
         return UITableView.automaticDimension
     }
     
-    init(id: Int, title: String, isDropdown: Bool, hasSubitem: Bool, isSelected: Bool) {
+    init(id: Int, sideMenu: SideMenu, isDropdown: Bool, hasSubitem: Bool, isSelected: Bool) {
         self.id = id
-        self.title = title
+        self.sideMenu = sideMenu
         self.isDropdown = isDropdown
         self.hasSubitem = hasSubitem
         self.isSelected = isSelected
@@ -38,7 +38,7 @@ final class SideMenuItem: TableViewItem, SideMenuTableViewCellDelegate {
         let cell: SideMenuTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         
         cell.delegate = self
-        cell.titleLabel.text = self.title
+        cell.titleLabel.text = sideMenu.title
         configureHighlightedCell(cell, color: UIColor(hex: "#212529").withAlphaComponent(0.8))
         DispatchQueue.main.async {
             cell.isSelected = self.isSelected

@@ -36,6 +36,8 @@
 		A927387B223C96BD00964CFF /* DashboardWidgetCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A9273879223C96BD00964CFF /* DashboardWidgetCollectionViewCell.xib */; };
 		A927387D223C96D900964CFF /* DashboardWidgetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927387C223C96D900964CFF /* DashboardWidgetItem.swift */; };
 		A9273880223C9B5800964CFF /* DashboardWidgetSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A927387F223C9B5800964CFF /* DashboardWidgetSection.swift */; };
+		A928D241224C8167005F8BBF /* LogoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928D240224C8167005F8BBF /* LogoutService.swift */; };
+		A928D243224CA395005F8BBF /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A928D242224CA395005F8BBF /* APIError.swift */; };
 		A929E336223B249700FE29A1 /* SideMenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E335223B249700FE29A1 /* SideMenuCoordinator.swift */; };
 		A929E338223B258D00FE29A1 /* SideMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E337223B258D00FE29A1 /* SideMenuViewModel.swift */; };
 		A929E33C223B2EC800FE29A1 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A929E33A223B2EC800FE29A1 /* SideMenuTableViewCell.swift */; };
@@ -132,6 +134,8 @@
 		A9273879223C96BD00964CFF /* DashboardWidgetCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardWidgetCollectionViewCell.xib; sourceTree = "<group>"; };
 		A927387C223C96D900964CFF /* DashboardWidgetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWidgetItem.swift; sourceTree = "<group>"; };
 		A927387F223C9B5800964CFF /* DashboardWidgetSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardWidgetSection.swift; sourceTree = "<group>"; };
+		A928D240224C8167005F8BBF /* LogoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutService.swift; sourceTree = "<group>"; };
+		A928D242224CA395005F8BBF /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		A929E335223B249700FE29A1 /* SideMenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCoordinator.swift; sourceTree = "<group>"; };
 		A929E337223B258D00FE29A1 /* SideMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewModel.swift; sourceTree = "<group>"; };
 		A929E33A223B2EC800FE29A1 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 			children = (
 				A95F46E52249A5EA00AADD8E /* NetworkManager.swift */,
 				A95F46E322499FE200AADD8E /* NetworkApiService.swift */,
+				A928D242224CA395005F8BBF /* APIError.swift */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -602,6 +607,7 @@
 				A914A3A02239BCB20098C8CD /* AppDelegate.swift */,
 				A962327C224B01CE00D2B48A /* AppCoordinator.swift */,
 				A962327E224B075800D2B48A /* LogoutHandler.swift */,
+				A928D240224C8167005F8BBF /* LogoutService.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -905,6 +911,7 @@
 				A962328F224B153A00D2B48A /* LaunchService.swift in Sources */,
 				A914A3F2223A32A20098C8CD /* EmployeeListViewController.swift in Sources */,
 				A95F46E422499FE200AADD8E /* NetworkApiService.swift in Sources */,
+				A928D243224CA395005F8BBF /* APIError.swift in Sources */,
 				A929E341223B44F600FE29A1 /* RDNavigationDrawerDelegate.swift in Sources */,
 				A92A07B62241B4EF0090F220 /* UITableView+Extension.swift in Sources */,
 				A914A3ED223A30510098C8CD /* CollectionViewItem.swift in Sources */,
@@ -924,6 +931,7 @@
 				A92DA24B2242FBF3004EC723 /* EmployeeListCoordinator.swift in Sources */,
 				A929E33F223B302600FE29A1 /* SideMenuItem.swift in Sources */,
 				A95F46F72249B4FA00AADD8E /* Teacher+Migration.swift in Sources */,
+				A928D241224C8167005F8BBF /* LogoutService.swift in Sources */,
 				A914A3CC2239C8E80098C8CD /* UIColor+Extension.swift in Sources */,
 				A929E336223B249700FE29A1 /* SideMenuCoordinator.swift in Sources */,
 				A95F46E62249A5EA00AADD8E /* NetworkManager.swift in Sources */,

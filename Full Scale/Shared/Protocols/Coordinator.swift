@@ -44,4 +44,8 @@ extension Coordinator {
         coordinator.start()
     }
     
+    func dismiss(animated: Bool = true) {
+        navigationController?.dismiss(animated: animated)
+    }
+    
 }

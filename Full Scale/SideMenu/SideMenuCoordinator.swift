@@ -8,11 +8,16 @@
 
 import UIKit
 
-struct SideMenuCoordinator {
+struct SideMenuCoordinator: Coordinator {
+    
     weak var navigationController: UINavigationController?
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
+    }
+    
+    func sideToggle() {
+        RDNavigationDrawer.sideToggle()
     }
     
     func testPushViewController() {
@@ -24,4 +29,7 @@ struct SideMenuCoordinator {
         let controller = EmployeeListViewController(viewModel: viewModel)
         self.navigationController?.pushViewController(controller, animated: true)
     }
+    
+    func start() { }
+    
 }

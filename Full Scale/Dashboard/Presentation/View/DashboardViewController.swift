@@ -76,8 +76,7 @@ final class DashboardViewController: UIViewController {
         }
         
         if Device.isHorizontal {
-            let searchBar = UIBarButtonItem(customView: searchController.searchBar)
-            
+            //let searchBar = UIBarButtonItem(customView: searchController.searchBar)
             //self.navigationItem.rightBarButtonItems = [searchBar]
         }
     }
