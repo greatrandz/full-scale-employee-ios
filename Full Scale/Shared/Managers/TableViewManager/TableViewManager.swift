@@ -31,41 +31,33 @@ final class TableViewManager: NSObject {
     }
 
     func insertItems(items: [TableViewItem], at indexPath: IndexPath, completion: TableViewItemCompletion?) {
-        tableView?.performBatchUpdates({
+        
+        UIView.setAnimationsEnabled(true)
+        let indexPaths = items.enumerated().map { (index, item) -> IndexPath in
             
-            let indexPaths = items.enumerated().map { (index, item) -> IndexPath in
-                
-                let indexRow = indexPath.row + (index + 1)
-                self.sections[indexPath.section].items.insert(item, at: indexRow)
-                return IndexPath(row: indexRow, section: indexPath.section)
-            }
-            
-            self.tableView?.insertRows(at: indexPaths, with: .bottom)
-            
-        }, completion: { (_) in
-            completion?()
-        })
+            let indexRow = indexPath.row + (index + 1)
+            self.sections[indexPath.section].items.insert(item, at: indexRow)
+            return IndexPath(row: indexRow, section: indexPath.section)
+        }
+        
+        self.tableView?.insertRows(at: indexPaths, with: .bottom)
+        completion?()
         
     }
     
     func removeItems(items: [TableViewItem], animated: Bool, completion: TableViewItemCompletion?) {
         
-        tableView?.performBatchUpdates({
+        UIView.setAnimationsEnabled(animated)
+        let indexPaths = items.map { self.getIndexPath(id: $0.id) }
+        
+        if !indexPaths.isEmpty {
+            self.sections[indexPaths.first!.section].items
+                .removeSubrange(indexPaths.first!.row ..< indexPaths.last!.row + 1)
+            self.tableView?.deleteRows(at: indexPaths, with: .top)
+        }
+        
+        completion?()
             
-            UIView.setAnimationsEnabled(animated)
-            
-            let indexPaths = items.map { self.getIndexPath(id: $0.id) }
-            
-            if !indexPaths.isEmpty {
-                self.sections[indexPaths.first!.section].items
-                    .removeSubrange(indexPaths.first!.row ..< indexPaths.last!.row + 1)
-                self.tableView?.deleteRows(at: indexPaths, with: .top)
-            }
-            
-        }, completion: { (_) in
-            UIView.setAnimationsEnabled(true)
-            completion?()
-        })
     }
     
     func getIndexPath(id: Int) -> IndexPath {

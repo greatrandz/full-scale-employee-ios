@@ -1090,6 +1090,7 @@
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1112,6 +1113,7 @@
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
