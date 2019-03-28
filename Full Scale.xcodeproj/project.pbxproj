@@ -1086,7 +1086,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEB467VDEB;
-				FS_API_URL = "https://develop.fullscale.rocks/";
+				FS_API_URL = "http://127.0.0.1/";
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
@@ -1108,7 +1108,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YEB467VDEB;
-				FS_API_URL = "https://develop.fullscale.rocks/";
+				FS_API_URL = "http://127.0.0.1/";
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
