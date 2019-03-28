@@ -71,6 +71,7 @@ final class TableViewManager: NSObject {
         let deadline = animated ? animatedTime : 0
         
         DispatchQueue.main.asyncAfter(deadline: .now() + deadline) {
+            UIView.setAnimationsEnabled(true)
             completion?()
         }
             
