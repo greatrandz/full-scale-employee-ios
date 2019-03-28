@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		639B356AF964360C0ED721D1 /* Pods_Full_Scale.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9196C1BEEB28358FE2462F5 /* Pods_Full_Scale.framework */; };
+		929F1567E173E9EF4103869F /* Pods_Full_ScaleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B43ED6A9D5CE113AFE07FA /* Pods_Full_ScaleTests.framework */; };
 		A914A3A12239BCB20098C8CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A914A3A02239BCB20098C8CD /* AppDelegate.swift */; };
 		A914A3A82239BCB30098C8CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A914A3A72239BCB30098C8CD /* Assets.xcassets */; };
 		A914A3AB2239BCB30098C8CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A914A3A92239BCB30098C8CD /* LaunchScreen.storyboard */; };
@@ -83,7 +84,6 @@
 		A962328A224B0C9300D2B48A /* LaunchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9623289224B0C9300D2B48A /* LaunchCoordinator.swift */; };
 		A962328C224B0D9700D2B48A /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962328B224B0D9700D2B48A /* LaunchViewModel.swift */; };
 		A962328F224B153A00D2B48A /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A962328E224B153A00D2B48A /* LaunchService.swift */; };
-		C19CD592AFE40548F88CC12D /* Pods_Full_ScaleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B43ED6A9D5CE113AFE07FA /* Pods_Full_ScaleTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,9 +97,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		276D94B59CA6B088B231C50D /* Pods-Full ScaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full ScaleTests.release.xcconfig"; path = "Target Support Files/Pods-Full ScaleTests/Pods-Full ScaleTests.release.xcconfig"; sourceTree = "<group>"; };
 		28175ADBBF72E2A94E63F8D6 /* Pods-Full Scale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full Scale.release.xcconfig"; path = "Target Support Files/Pods-Full Scale/Pods-Full Scale.release.xcconfig"; sourceTree = "<group>"; };
-		4FACA890D97C872A49CA21F9 /* Pods-Full ScaleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full ScaleTests.release.xcconfig"; path = "Target Support Files/Pods-Full ScaleTests/Pods-Full ScaleTests.release.xcconfig"; sourceTree = "<group>"; };
-		6A525EEAB091D957E8AC52AB /* Pods-Full ScaleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full ScaleTests.debug.xcconfig"; path = "Target Support Files/Pods-Full ScaleTests/Pods-Full ScaleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4C0B821D21DB36846FCE8694 /* Pods-Full Scale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full Scale.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Full Scale/Pods-Full Scale.debug.xcconfig"; sourceTree = "<group>"; };
+		7DFDF7C5F65459804691FD27 /* Pods-Full Scale.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full Scale.release.xcconfig"; path = "Pods/Target Support Files/Pods-Full Scale/Pods-Full Scale.release.xcconfig"; sourceTree = "<group>"; };
 		A914A39D2239BCB20098C8CD /* Full Scale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Full Scale.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A914A3A02239BCB20098C8CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A914A3A72239BCB30098C8CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 		A962328B224B0D9700D2B48A /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A962328E224B153A00D2B48A /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
 		B9196C1BEEB28358FE2462F5 /* Pods_Full_Scale.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Full_Scale.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFFEDA9AA6529483BF6EC0AC /* Pods-Full ScaleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full ScaleTests.debug.xcconfig"; path = "Target Support Files/Pods-Full ScaleTests/Pods-Full ScaleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D7B43ED6A9D5CE113AFE07FA /* Pods_Full_ScaleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Full_ScaleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE60479642565B722A7C71E5 /* Pods-Full Scale.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Full Scale.debug.xcconfig"; path = "Target Support Files/Pods-Full Scale/Pods-Full Scale.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,7 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C19CD592AFE40548F88CC12D /* Pods_Full_ScaleTests.framework in Frameworks */,
+				929F1567E173E9EF4103869F /* Pods_Full_ScaleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,8 +683,10 @@
 			children = (
 				FE60479642565B722A7C71E5 /* Pods-Full Scale.debug.xcconfig */,
 				28175ADBBF72E2A94E63F8D6 /* Pods-Full Scale.release.xcconfig */,
-				6A525EEAB091D957E8AC52AB /* Pods-Full ScaleTests.debug.xcconfig */,
-				4FACA890D97C872A49CA21F9 /* Pods-Full ScaleTests.release.xcconfig */,
+				4C0B821D21DB36846FCE8694 /* Pods-Full Scale.debug.xcconfig */,
+				7DFDF7C5F65459804691FD27 /* Pods-Full Scale.release.xcconfig */,
+				CFFEDA9AA6529483BF6EC0AC /* Pods-Full ScaleTests.debug.xcconfig */,
+				276D94B59CA6B088B231C50D /* Pods-Full ScaleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -713,7 +717,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A914A3BD2239BCB30098C8CD /* Build configuration list for PBXNativeTarget "Full ScaleTests" */;
 			buildPhases = (
-				A189DC908845EBB7B69F52F6 /* [CP] Check Pods Manifest.lock */,
+				742A047621CEC241C1A4D70D /* [CP] Check Pods Manifest.lock */,
 				A914A3AD2239BCB30098C8CD /* Sources */,
 				A914A3AE2239BCB30098C8CD /* Frameworks */,
 				A914A3AF2239BCB30098C8CD /* Resources */,
@@ -801,42 +805,37 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Full Scale/Pods-Full Scale-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
-				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
-				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
-				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Full Scale/Pods-Full Scale-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Full Scale/Pods-Full Scale-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Full Scale/Pods-Full Scale-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		742A047621CEC241C1A4D70D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Full ScaleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8C2D16BA90A8405AD11FBC62 /* [CP] Check Pods Manifest.lock */ = {
@@ -855,28 +854,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Full Scale-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A189DC908845EBB7B69F52F6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Full ScaleTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1108,7 +1085,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FS_API_URL = "http://127.0.0.1/";
+				DEVELOPMENT_TEAM = YEB467VDEB;
+				FS_API_URL = "https://develop.fullscale.rocks/";
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
@@ -1129,7 +1107,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				FS_API_URL = "http://127.0.0.1/";
+				DEVELOPMENT_TEAM = YEB467VDEB;
+				FS_API_URL = "https://develop.fullscale.rocks/";
 				FS_CLIENT_ID = 2;
 				FS_SECRET_KEY = H5Jq0AfEFG34OYnMKsiRwIfOsdNw0KJnTg3y2Cso;
 				INFOPLIST_FILE = "Full Scale/Info.plist";
@@ -1146,11 +1125,12 @@
 		};
 		A914A3BE2239BCB30098C8CD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A525EEAB091D957E8AC52AB /* Pods-Full ScaleTests.debug.xcconfig */;
+			baseConfigurationReference = CFFEDA9AA6529483BF6EC0AC /* Pods-Full ScaleTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YEB467VDEB;
 				INFOPLIST_FILE = "Full ScaleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1167,11 +1147,12 @@
 		};
 		A914A3BF2239BCB30098C8CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FACA890D97C872A49CA21F9 /* Pods-Full ScaleTests.release.xcconfig */;
+			baseConfigurationReference = 276D94B59CA6B088B231C50D /* Pods-Full ScaleTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YEB467VDEB;
 				INFOPLIST_FILE = "Full ScaleTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
